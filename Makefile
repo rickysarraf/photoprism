@@ -334,8 +334,10 @@ docker-release-impish:
 	docker pull --platform=amd64 ubuntu:impish
 	docker pull --platform=arm64 ubuntu:impish
 	scripts/docker/buildx-multi.sh photoprism linux/amd64,linux/arm64 impish /impish
-docker-local:
-	scripts/docker/build.sh photoprism
+docker-local-bullseye:
+        scripts/docker/build.sh photoprism bullseye /bullseye
+docker-local-bookworm:
+        scripts/docker/build.sh photoprism bookworm /bookworm
 docker-pull:
 	docker pull photoprism/photoprism:preview photoprism/photoprism:latest
 docker-ddns:
